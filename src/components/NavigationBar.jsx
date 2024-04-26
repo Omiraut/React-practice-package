@@ -1,11 +1,12 @@
 import { Button, Form } from "react-bootstrap";
-import Container from "react-bootstrap/Container";
+// import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import logo from "../logo.svg";
 
-function Navigationbar() {
+import logo from "../logo.png";
+import propTypes from "prop-types";
+
+function Navigationbar(props) {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       {/* <Container> */}
@@ -16,24 +17,14 @@ function Navigationbar() {
           height="30"
           className="d-inline-block align-top"
           alt="React Bootstrap logo"
-        />
+        />{" "}
+        {props.title}
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">Home</Nav.Link>
-          <Nav.Link href="#link">Link</Nav.Link>
-          <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">
-              Another action
-            </NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">
-              Separated link
-            </NavDropdown.Item>
-          </NavDropdown>
+          <Nav.Link href="#home">{props.homeText}</Nav.Link>
+          <Nav.Link href="#link">{props.aboutText}</Nav.Link>
         </Nav>
         <Form className="d-flex">
           <Form.Control
@@ -51,3 +42,18 @@ function Navigationbar() {
 }
 
 export default Navigationbar;
+
+// this will validate the values are sent are valid to context or not
+// check in console to find any type of error related to it
+Navigationbar.propTypes = {
+  title: propTypes.string,
+  aboutText: propTypes.string,
+  homeText: propTypes.string,
+};
+
+// use this to set default value
+Navigationbar.defaultProps = {
+  title: "Title Missing",
+  aboutText: "about Missing",
+  homeText: "Hometext Missing",
+};

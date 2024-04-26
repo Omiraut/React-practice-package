@@ -1,10 +1,10 @@
 import "./App.css";
-import Navigationbar from "./components/NavigationBar";
+import NavigationBar from "./components/NavigationBar";
 
 function App() {
   return (
     <>
-      <Navigationbar />
+      <NavigationBar title="Text App" aboutText="About Us" homeText="Main" />
     </>
   );
 }
