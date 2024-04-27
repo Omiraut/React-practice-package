@@ -3,41 +3,30 @@ import { Button, Container } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 
 function About() {
-  const [myStyle, setMyStyle] = useState({
-    color: "white",
-    backgroundColor: "black",
-  });
+  const [myStyle, setMyStyle] = useState("light");
 
   const [buttonText, setButtonText] = useState("Turn Light");
 
   const toggleStyle = () => {
-    if (myStyle.color === "white") {
-      setMyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
+    if (myStyle === "light") {
+      setMyStyle("dark");
       setButtonText("Trun Dark");
     } else {
-      setMyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
+      setMyStyle("light");
       setButtonText("Trun Light");
     }
   };
 
   return (
-    <Container>
-      <div style={myStyle} className="text-center ">
+    <Container data-bs-theme={myStyle}>
+      <div className="text-center ">
         <h2 className="my-3">About Us </h2>
       </div>
       <div>
-        <Accordion style={myStyle} defaultActiveKey="0">
-          <Accordion.Item style={myStyle} eventKey="0">
-            <Accordion.Header style={myStyle}>
-              Accordion Item #1
-            </Accordion.Header>
-            <Accordion.Body style={myStyle}>
+        <Accordion defaultActiveKey="0">
+          <Accordion.Item eventKey="0">
+            <Accordion.Header>Accordion Item #1</Accordion.Header>
+            <Accordion.Body>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
@@ -47,11 +36,9 @@ function About() {
               sunt in culpa qui officia deserunt mollit anim id est laborum.
             </Accordion.Body>
           </Accordion.Item>
-          <Accordion.Item style={myStyle} eventKey="1">
-            <Accordion.Header style={myStyle}>
-              Accordion Item #2
-            </Accordion.Header>
-            <Accordion.Body style={myStyle}>
+          <Accordion.Item eventKey="1">
+            <Accordion.Header>Accordion Item #2</Accordion.Header>
+            <Accordion.Body>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
               enim ad minim veniam, quis nostrud exercitation ullamco laboris
