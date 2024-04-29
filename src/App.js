@@ -51,10 +51,12 @@ function App() {
         <Container>
           <Routes>
             <Route
+              exact
               path="/about"
               element={<About mode={mode} textStyle={textStyle} />}
             />
             <Route
+              exact
               path="/"
               element={
                 <TextForm
