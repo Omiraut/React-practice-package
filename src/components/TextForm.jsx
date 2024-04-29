@@ -25,7 +25,7 @@ function TextForm(props) {
   const [text, setText] = useState("");
   return (
     <>
-      <Container>
+      <Container data-bs-theme={props.mode}>
         <div className="mb-3">
           <h1>{props.heading}</h1>
           <InputGroup>
@@ -67,10 +67,10 @@ function TextForm(props) {
           </Button>
         </div>
 
-        <div className="text-center">
+        <div className={`text-center  ${props.textStyle}`}>
           <h1>Your Text Summary</h1>
         </div>
-        <ul className="text-justify my-5">
+        <ul className={`text-justify my-5 ${props.textStyle} `}>
           <li>{text.split(" ").length - 1} Words</li>
           <li>{text.length} Characters</li>
           <li>{text.split(".").length - 1} number of approx Sentence</li>
@@ -83,7 +83,11 @@ function TextForm(props) {
             Reader person
           </li>
         </ul>
-        <h3>{text}</h3>
+        <h3 className={props.textStyle}>
+          {text.length > 0 ? text : "Write Something to preview here"}
+        </h3>
+        <br />
+        <hr />
       </Container>
     </>
   );

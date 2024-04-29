@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Container } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 
-function About() {
+function About(props) {
   const [myStyle, setMyStyle] = useState("light");
 
   const [buttonText, setButtonText] = useState("Turn Light");
@@ -18,9 +18,9 @@ function About() {
   };
 
   return (
-    <Container data-bs-theme={myStyle}>
+    <Container data-bs-theme={props.mode}>
       <div className="text-center ">
-        <h2 className="my-3">About Us </h2>
+        <h2 className={`my-3  ${props.textStyle}`}>About Us </h2>
       </div>
       <div>
         <Accordion defaultActiveKey="0">

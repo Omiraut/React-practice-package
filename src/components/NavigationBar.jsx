@@ -10,7 +10,7 @@ function Navigationbar(props) {
   return (
     <Navbar
       expand="lg"
-      data-bs-theme="dark"
+      data-bs-theme={props.mode}
       fixed="top"
       className="bg-body-tertiary bg-dark "
     >
@@ -38,7 +38,17 @@ function Navigationbar(props) {
             className="me-2"
             aria-label="Search"
           />
+
           <Button variant="outline-success">Search</Button>
+        </Form>
+        <Form className={`d-flex ${props.mode} `}>
+          <Form.Check // prettier-ignore
+            type="switch"
+            id="custom-switch"
+            label="mode"
+            onClick={props.toggleMode}
+            className={props.textStyle}
+          />
         </Form>
       </Navbar.Collapse>
       {/* </Container> */}
