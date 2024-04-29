@@ -1,21 +1,22 @@
-import { useState } from "react";
-import { Button, Container } from "react-bootstrap";
+// import { useState } from "react";
+// import { Button, Container } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import Accordion from "react-bootstrap/Accordion";
 
 function About(props) {
-  const [myStyle, setMyStyle] = useState("light");
+  // const [myStyle, setMyStyle] = useState("light");
 
-  const [buttonText, setButtonText] = useState("Turn Light");
+  // const [buttonText, setButtonText] = useState("Turn Light");
 
-  const toggleStyle = () => {
-    if (myStyle === "light") {
-      setMyStyle("dark");
-      setButtonText("Trun Dark");
-    } else {
-      setMyStyle("light");
-      setButtonText("Trun Light");
-    }
-  };
+  // const toggleStyle = () => {
+  //   if (myStyle === "light") {
+  //     setMyStyle("dark");
+  //     setButtonText("Trun Dark");
+  //   } else {
+  //     setMyStyle("light");
+  //     setButtonText("Trun Light");
+  //   }
+  // };
 
   return (
     <Container data-bs-theme={props.mode}>
@@ -50,11 +51,11 @@ function About(props) {
           </Accordion.Item>
         </Accordion>
       </div>
-      <div className="text-center">
+      {/* <div className="text-center">
         <Button variant="danger" onClick={toggleStyle} className="my-3">
           {buttonText}
         </Button>
-      </div>
+      </div> */}
     </Container>
   );
 }

@@ -25,9 +25,9 @@ function TextForm(props) {
   const [text, setText] = useState("");
   return (
     <>
-      <Container data-bs-theme={props.mode}>
+      <Container data-bs-theme={props.mode} style={{ marginTop: "15vh" }}>
         <div className="mb-3">
-          <h1>{props.heading}</h1>
+          <h2 className={`${props.textStyle} text-center`}>{props.heading}</h2>
           <InputGroup>
             <InputGroup.Text>Input Here</InputGroup.Text>
             <Form.Control

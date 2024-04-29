@@ -5,8 +5,14 @@ import Navbar from "react-bootstrap/Navbar";
 import "bootstrap/dist/css/bootstrap.min.css";
 import logo from "../logo.png";
 import propTypes from "prop-types";
+import { Link } from "react-router-dom";
 // bg="dark"
 function Navigationbar(props) {
+  const linkStyle = {
+    margin: "1rem",
+    textDecoration: "none",
+    color: props.mode === "dark" ? "white" : "black",
+  };
   return (
     <Navbar
       expand="lg"
@@ -15,21 +21,30 @@ function Navigationbar(props) {
       className="bg-body-tertiary bg-dark "
     >
       {/* <Container> */}
-      <Navbar.Brand href="#home">
-        <img
-          src={logo}
-          width="30"
-          height="30"
-          className="d-inline-block align-top"
-          alt="React Bootstrap logo"
-        />{" "}
-        {props.title}
+      <Navbar.Brand>
+        <Link style={linkStyle} to="/">
+          <img
+            src={logo}
+            width="30"
+            height="30"
+            className="d-inline-block align-top"
+            alt="React Bootstrap logo"
+          />{" "}
+          {props.title}
+        </Link>
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="me-auto">
-          <Nav.Link href="#home">{props.homeText}</Nav.Link>
-          <Nav.Link href="#link">{props.aboutText}</Nav.Link>
+          <Link style={linkStyle} to="/">
+            {props.homeText}
+          </Link>
+          <Link style={linkStyle} to="/about">
+            {props.aboutText}
+          </Link>
+
+          {/* <Nav.Link to="/">{props.homeText}</Nav.Link>
+          <Nav.Link to="/about">{props.aboutText}</Nav.Link> */}
         </Nav>
         <Form className="d-flex">
           <Form.Control
