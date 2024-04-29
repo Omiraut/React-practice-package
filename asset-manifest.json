@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/react-practice-package/static/css/main.6b7556d8.css",
+    "main.js": "/react-practice-package/static/js/main.058bf47b.js",
+    "static/js/453.59960548.chunk.js": "/react-practice-package/static/js/453.59960548.chunk.js",
+    "static/media/logo.png": "/react-practice-package/static/media/logo.039a1304cf5b8eb3b212.png",
+    "index.html": "/react-practice-package/index.html",
+    "main.6b7556d8.css.map": "/react-practice-package/static/css/main.6b7556d8.css.map",
+    "main.058bf47b.js.map": "/react-practice-package/static/js/main.058bf47b.js.map",
+    "453.59960548.chunk.js.map": "/react-practice-package/static/js/453.59960548.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6b7556d8.css",
+    "static/js/main.058bf47b.js"
+  ]
+}
