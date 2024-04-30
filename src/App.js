@@ -5,7 +5,7 @@ import About from "./components/About";
 import NavigationBar from "./components/NavigationBar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 
 function App() {

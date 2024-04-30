@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Button, Container } from "react-bootstrap";
+import { Button, Col, Container, Row } from "react-bootstrap";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
@@ -25,7 +25,7 @@ function TextForm(props) {
   const [text, setText] = useState("");
   return (
     <>
-      <Container data-bs-theme={props.mode} style={{ marginTop: "15vh" }}>
+      <Container data-bs-theme={props.mode} style={{ marginTop: "8vh" }}>
         <div className="mb-3">
           <h2 className={`${props.textStyle} text-center`}>{props.heading}</h2>
           <InputGroup>
@@ -45,7 +45,7 @@ function TextForm(props) {
             onClick={handleClick}
             variant="primary"
             size="sm"
-            className="ps-3 ms-3"
+            className="ps-3 ms-3 my-1"
           >
             Convert To Uppercase
           </Button>
@@ -53,7 +53,7 @@ function TextForm(props) {
             onClick={handleLowClick}
             variant="primary"
             size="sm"
-            className="ps-3 ms-3"
+            className="ps-3 ms-3 my-1"
           >
             Convert To Lowercase
           </Button>
@@ -61,31 +61,43 @@ function TextForm(props) {
             onClick={copyOnClick}
             variant="primary"
             size="sm"
-            className="ps-3 ms-3"
+            className="ps-3 ms-3 my-1"
           >
             Copy Text
           </Button>
         </div>
-
-        <div className={`text-center  ${props.textStyle}`}>
-          <h1>Your Text Summary</h1>
-        </div>
-        <ul className={`text-justify my-5 ${props.textStyle} `}>
-          <li>{text.split(" ").length - 1} Words</li>
-          <li>{text.length} Characters</li>
-          <li>{text.split(".").length - 1} number of approx Sentence</li>
-          <li>
-            {0.0077 * text.split(" ").length} minute will take to read to
-            Average person
-          </li>
-          <li>
-            {0.005 * text.split(" ").length} minute will take to read to Fast
-            Reader person
-          </li>
-        </ul>
-        <h3 className={props.textStyle}>
-          {text.length > 0 ? text : "Write Something to preview here"}
-        </h3>
+        <Row>
+          <Col>
+            <div className={`text-center  ${props.textStyle}`}>
+              <h1>Your Text Summary</h1>
+            </div>
+            <ul className={`text-justify my-5 ${props.textStyle} `}>
+              <li>
+                {
+                  text.split(" ").filter((element) => {
+                    return element.length != 0;
+                  }).length
+                }{" "}
+                Words
+              </li>
+              <li>{text.length} Characters</li>
+              <li>{text.split(".").length - 1} number of approx Sentence</li>
+              <li>
+                {0.0077 * text.split(" ").length} minute will take to read to
+                Average person
+              </li>
+              <li>
+                {0.005 * text.split(" ").length} minute will take to read to
+                Fast Reader person
+              </li>
+            </ul>
+          </Col>
+          <Col>
+            <h6 className={`text-justify my-5 ${props.textStyle} `}>
+              {text.length > 0 ? text : "Write Something to preview here"}
+            </h6>
+          </Col>
+        </Row>
         <br />
         <hr />
       </Container>

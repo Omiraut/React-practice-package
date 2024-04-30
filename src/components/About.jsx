@@ -19,7 +19,7 @@ function About(props) {
   // };
 
   return (
-    <Container data-bs-theme={props.mode}>
+    <Container style={{ marginTop: "8vh" }} data-bs-theme={props.mode}>
       <div className="text-center ">
         <h2 className={`my-3  ${props.textStyle}`}>About Us </h2>
       </div>
