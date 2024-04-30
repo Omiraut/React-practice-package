@@ -75,7 +75,7 @@ function TextForm(props) {
               <li>
                 {
                   text.split(" ").filter((element) => {
-                    return element.length != 0;
+                    return element.length !== 0;
                   }).length
                 }{" "}
                 Words
